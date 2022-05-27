@@ -3,26 +3,18 @@
 <LinearLayout
 
 
-
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     android:orientation="vertical"
-
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
 
-    <com.example.ale_proj.CircleView
-
+    <com.example.ale_proj.DrawImage
+        android:id="@+id/MainW"
         android:layout_width="match_parent"
-
-        android:layout_height="wrap_content">
-    </com.example.ale_proj.CircleView>
-
-
+        android:layout_height="match_parent">
+    </com.example.ale_proj.DrawImage>
 
 </LinearLayout>
