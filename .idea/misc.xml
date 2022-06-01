@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/CUBER/AndroidStudioProjects/AlE-proj/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/CUBER/AndroidStudioProjects/AlE-proj/app/src/main/res/layout/activity_record.xml" value="0.1234375" />
+        <entry key="..\:/Users/CUBER/AndroidStudioProjects/AlE-proj/app/src/main/res/layout/activity_rewards.xml" value="0.1234375" />
+        <entry key="..\:/Users/CUBER/AndroidStudioProjects/AlE-proj/app/src/main/res/layout/activity_start.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/CUBER/AndroidStudioProjects/AlE-proj/app/src/main/res/layout/check_activity.xml" value="0.11614583333333334" />
+        <entry key="..\:/Users/CUBER/AndroidStudioProjects/AlE-proj/app/src/main/res/layout/record_adapter_item.xml" value="0.49292452830188677" />
         <entry key="..\:/Users/CUBER/AndroidStudioProjects/AlEproj/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.13148148148148148" />
         <entry key="..\:/Users/CUBER/AndroidStudioProjects/AlEproj/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13148148148148148" />
         <entry key="..\:/Users/CUBER/AndroidStudioProjects/AlEproj/app/src/main/res/layout/activity_main.xml" value="0.1" />
