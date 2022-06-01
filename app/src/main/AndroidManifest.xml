@@ -26,6 +26,7 @@
             android:name=".CheckActivity"
             android:label="Введите данные" >
         </activity>
+        <activity android:name=".ActivityRecord" />
     </application>
 
 </manifest>
