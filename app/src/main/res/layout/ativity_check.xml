@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ListView
-
-    android:id="@+id/record_ListView"
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue">
+    android:orientation="vertical"
+    android:weightSum="100"
+    >
 
-</ListView>
+    <ListView
+        android:layout_weight="70"
+        android:id="@+id/check_ListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue">
+    </ListView>
+
+    <Button
+        android:id="@+id/check_btn"
+        android:layout_width="155dp"
+        android:layout_height="176dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_weight="30"
+        android:text="Ответ"
+        android:textSize="20sp" />
+</LinearLayout>
