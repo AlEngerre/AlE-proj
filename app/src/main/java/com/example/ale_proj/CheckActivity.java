@@ -26,6 +26,7 @@ public class CheckActivity extends AppCompatActivity {
         for (Integer i: bitmaps_converted) {
             bitmaps.add((BitmapFactory.decodeResource(getResources(), i)));
         }
+
         System.out.println(bitmaps_converted);
     }
 }

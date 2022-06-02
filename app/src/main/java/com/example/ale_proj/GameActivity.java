@@ -91,11 +91,13 @@ public class GameActivity extends AppCompatActivity {
 
         }
 
+
         @Override
         protected void onPostExecute(Void unused) {
             super.onPostExecute(unused);
             drawImage.clearBitmaps();
             System.out.println(pict_num);
+            System.out.println("");
             Intent j = new Intent(GameActivity.this, CheckActivity.class);
             j.putExtra("pict_num", pict_num);
             j.putExtra("bitmaps_converted", bitmaps_converted);

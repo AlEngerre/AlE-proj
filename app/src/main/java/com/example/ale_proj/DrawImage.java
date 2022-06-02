@@ -47,6 +47,7 @@ public  class DrawImage extends View{
                     new Rect(x, y, x + width, y + height),
                     new Paint());
         }
+
     }
 
     }
