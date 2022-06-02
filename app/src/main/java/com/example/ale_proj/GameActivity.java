@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Window;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -19,8 +20,8 @@ public class GameActivity extends AppCompatActivity {
     DrawImage drawImage;
     private ArrayList<Integer> poses = new ArrayList<>();
     private ArrayList<Bitmap> bitmaps = new ArrayList<>();
+    private ArrayList<Integer> bitmaps_converted = new ArrayList<>();
     private ArrayList<Integer> pict_num = new ArrayList<>();
-    int rd_int = -1;
     Random rand = new Random();
 
     @Override
@@ -33,8 +34,11 @@ public class GameActivity extends AppCompatActivity {
         pict_num.add(2, 0);
         drawImage = findViewById(R.id.MainW);
         bitmaps.add(BitmapFactory.decodeResource(getResources(), R.drawable.d1));
-//        bitmaps.add(BitmapFactory.decodeResource(getResources(), R.drawable.d2));
-//        bitmaps.add(BitmapFactory.decodeResource(getResources(), R.drawable.d3));
+        bitmaps_converted.add(R.drawable.d1);
+        bitmaps.add(BitmapFactory.decodeResource(getResources(), R.drawable.d2));
+        bitmaps_converted.add(R.drawable.d2);
+        bitmaps.add(BitmapFactory.decodeResource(getResources(), R.drawable.d3));
+        bitmaps_converted.add(R.drawable.d3);
         for (int i = 0; i <= 14; i++) {
             poses.add(i);
         }
@@ -94,6 +98,7 @@ public class GameActivity extends AppCompatActivity {
             System.out.println(pict_num);
             Intent j = new Intent(GameActivity.this, CheckActivity.class);
             j.putExtra("pict_num", pict_num);
+            j.putExtra("bitmaps_converted", bitmaps_converted);
             startActivity(j);
         }
     }
