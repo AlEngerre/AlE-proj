@@ -23,7 +23,7 @@ public class RewardsAdapter extends ArrayAdapter<Rewards> {
         }
 
 // Заполняем адаптер
-        ((TextView) convertView.findViewById(R.id.number)).setText(String.valueOf(rewards.getId()));
+        ((TextView) convertView.findViewById(R.id.number)).setText(String.valueOf(position + 1));
         ((TextView) convertView.findViewById(R.id.name)).setText(String.valueOf(rewards.getUsers()));
         ((TextView) convertView.findViewById(R.id.record)).setText(String.valueOf(rewards.getRecord()));
 
