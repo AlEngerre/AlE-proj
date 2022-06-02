@@ -100,6 +100,7 @@ public class GameActivity extends AppCompatActivity {
             System.out.println("");
             Intent j = new Intent(GameActivity.this, CheckActivity.class);
             j.putExtra("pict_num", pict_num);
+
             j.putExtra("bitmaps_converted", bitmaps_converted);
             startActivity(j);
         }
