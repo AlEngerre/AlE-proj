@@ -19,6 +19,7 @@ public class GameActivity extends AppCompatActivity {
     DrawImage drawImage;
     private ArrayList<Integer> poses = new ArrayList<>();
     private ArrayList<Bitmap> bitmaps = new ArrayList<>();
+    private ArrayList<Integer> pict_num = new ArrayList<>();
     int rd_int = -1;
     Random rand = new Random();
 
@@ -27,10 +28,13 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        pict_num.add(0,0);
+        pict_num.add(1, 0);
+        pict_num.add(2, 0);
         drawImage = findViewById(R.id.MainW);
         bitmaps.add(BitmapFactory.decodeResource(getResources(), R.drawable.d1));
-        bitmaps.add(BitmapFactory.decodeResource(getResources(), R.drawable.d2));
-        bitmaps.add(BitmapFactory.decodeResource(getResources(), R.drawable.d3));
+//        bitmaps.add(BitmapFactory.decodeResource(getResources(), R.drawable.d2));
+//        bitmaps.add(BitmapFactory.decodeResource(getResources(), R.drawable.d3));
         for (int i = 0; i <= 14; i++) {
             poses.add(i);
         }
@@ -43,14 +47,22 @@ public class GameActivity extends AppCompatActivity {
         protected Void doInBackground(Void... voids) {
 
             int random_integer = rand.nextInt(4) +5;
-            for (int i = 1; i < random_integer; i++) {
+            for (int i = 0; i < random_integer; i++) {
                 System.out.println(i);
+                publishProgress();
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                publishProgress();
+                drawImage.clearBitmaps();
+                drawImage.invalidate();
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
             }
             return null;
         }
@@ -59,13 +71,17 @@ public class GameActivity extends AppCompatActivity {
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
             drawImage.clearBitmaps();
-            int bm_count = rand.nextInt(2) + 1;
+            int bm_count = rand.nextInt(3) + 1;
 
             List<Integer> rand_ints = RandomSequence.getRandom(0, 14, bm_count);
 
             for (int i = 0; i < bm_count; i++) {
-                drawImage.addBitmap(rand_ints.get(i), bitmaps.get(rand.nextInt(bitmaps.size())));
+                int rand_bitm = rand.nextInt(bitmaps.size());
+                drawImage.addBitmap(rand_ints.get(i), bitmaps.get(rand_bitm));
+                pict_num.set(rand_bitm, pict_num.get(rand_bitm) + 1);
+
             }
+            System.out.println(pict_num);
             drawImage.invalidate();
 
 
@@ -74,15 +90,10 @@ public class GameActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void unused) {
             super.onPostExecute(unused);
-            try {
-                Thread.sleep(1500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             drawImage.clearBitmaps();
+            System.out.println(pict_num);
             Intent j = new Intent(GameActivity.this, CheckActivity.class);
-            String test = "asd";
-            j.putExtra("text", test);
+            j.putExtra("pict_num", pict_num);
             startActivity(j);
         }
     }
