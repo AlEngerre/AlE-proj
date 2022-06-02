@@ -16,6 +16,7 @@ public  class DrawImage extends View{
     private ArrayList<Integer> positions = new ArrayList<>();
     public DrawImage(Context context, AttributeSet attrs) {
         super(context, attrs);
+
 //        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.DrawImage);
 //        typedArray.recycle();
     }
