@@ -11,17 +11,38 @@
         android:layout_weight="70"
         android:id="@+id/check_ListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="190dp"
         android:background="@color/blue">
     </ListView>
 
-    <Button
-        android:id="@+id/check_btn"
-        android:layout_width="155dp"
-        android:layout_height="176dp"
+    <EditText
+
+        android:id="@+id/name_enter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Введите ваше имя"
+        android:textAlignment="center"
+        android:textSize="20dp" />
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/answer_write"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/red"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:layout_marginTop="40dp"
+        android:id="@+id/check_btn"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
         android:layout_weight="30"
         android:text="Ответ"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 </LinearLayout>

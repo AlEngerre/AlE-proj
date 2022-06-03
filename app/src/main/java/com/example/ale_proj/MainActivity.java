@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,10 +15,21 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_start);
 
-        new Database(this).insert("alex", 111);
-        new Database(this).insert("A", 1211);
 
-        Intent i = new Intent(MainActivity.this, GameActivity.class);
-        startActivity(i);
+        findViewById(R.id.start_game_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, GameActivity.class);
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.rewards_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, ActivityRecord.class);
+                startActivity(i);
+
+            }
+        });
     }
 }
