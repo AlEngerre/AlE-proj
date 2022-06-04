@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.rewards_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, ActivityRecord.class);
+                Intent i = new Intent(MainActivity.this, RecordActivity.class);
                 startActivity(i);
 
             }

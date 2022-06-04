@@ -9,7 +9,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Window;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -18,13 +17,11 @@ import java.util.List;
 import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
-    private Integer prev_n = -1;
-    private int Rd_n;
     DrawImage drawImage;
     private ArrayList<Integer> poses = new ArrayList<>();
     private ArrayList<Bitmap> bitmaps = new ArrayList<>();
-    private ArrayList<String> bitmaps_converted = new ArrayList<>();
-    private ArrayList<Integer> pict_num = new ArrayList<>();
+    private ArrayList<String> bitmapsConverted = new ArrayList<>();
+    private ArrayList<Integer> pictNum = new ArrayList<>();
     DrawImageTask drawImageTask;
     Random rand = new Random();
 
@@ -50,7 +47,7 @@ public class GameActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         for (int i = 0; i < bitmaps.size(); i++){
-            pict_num.add(i, 0);
+            pictNum.add(i, 0);
         }
         for (int i = 0; i <= 14; i++) {
             poses.add(i);
@@ -96,7 +93,7 @@ public class GameActivity extends AppCompatActivity {
             for (int i = 0; i < bm_count; i++) {
                 int rand_bitm = rand.nextInt(bitmaps.size());
                 drawImage.addBitmap(rand_ints.get(i), bitmaps.get(rand_bitm));
-                pict_num.set(rand_bitm, pict_num.get(rand_bitm) + 1);
+                pictNum.set(rand_bitm, pictNum.get(rand_bitm) + 1);
 
             }
             drawImage.invalidate();
@@ -110,9 +107,9 @@ public class GameActivity extends AppCompatActivity {
             super.onPostExecute(unused);
             drawImage.clearBitmaps();
             Intent j = new Intent(GameActivity.this, CheckActivity.class);
-            j.putExtra("pict_num", pict_num);
+            j.putExtra("pict_num", pictNum);
 
-            j.putExtra("bitmaps_converted", bitmaps_converted);
+            j.putExtra("bitmaps_converted", bitmapsConverted);
             startActivity(j);
             finish();
         }

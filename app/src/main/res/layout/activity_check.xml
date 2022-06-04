@@ -38,7 +38,7 @@
 
     <Button
         android:layout_marginTop="40dp"
-        android:id="@+id/check_btn"
+        android:id="@+id/checkButton"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_gravity="center"
